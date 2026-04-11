@@ -1,13 +1,24 @@
-baseURL                = "https://yaran.pages.dev/"
-languageCode           = "zh-cn"
-title                  = "yanran测试标题"
-# Theme i18n support
-# See i18n folder for available languages
-defaultContentLanguage = "zh-cn"
-# Set hasCJKLanguage to true if DefaultContentLanguage is a CJK language
-# This will make .Summary and .WordCount behave correctly
-hasCJKLanguage         = false
+# ==================== 基础站点信息 ====================
+baseURL = "https://yaran.pages.dev/"     # 改成你自己的 .pages.dev 地址
+title = "yanran测试标题"                 # 你的网站标题
+languageCode = "zh-cn"
 
+# ==================== 默认语言设置为简体中文 ====================
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
+
+# 因为是中文站点，必须开启这个
+hasCJKLanguage = true
+
+# ==================== 语言定义 ====================
+[languages]
+  [languages.zh]
+    languageCode = "zh-cn"
+    languageName = "简体中文"
+    title = "yanran测试标题"
+    weight = 1
+
+# ==================== 其他配置（保留你原来的） ====================
 [[module.imports]]
     path = "github.com/CaiJimmy/hugo-theme-stack/v3"
 
