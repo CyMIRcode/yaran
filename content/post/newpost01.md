@@ -1,6 +1,6 @@
 ---
 title: "Hugo 博客排版与功能全面测试"
-date: 2023-10-25T10:00:00+08:00
+date: 2026-4-12
 draft: false
 tags: ["测试", "Hugo", "Markdown"]
 categories: ["闲聊"]
