@@ -1,6 +1,6 @@
 # ==================== 基础站点信息 ====================
 baseURL = "https://yaran.pages.dev/"     # 改成你自己的 .pages.dev 地址
-title = "yanran测试标题"                 # 你的网站标题
+title = "雅然丛刊"                 # 你的网站标题
 languageCode = "zh-cn"
 
 # ==================== 默认语言设置为简体中文 ====================
@@ -15,7 +15,7 @@ hasCJKLanguage = true
   [languages.zh]
     languageCode = "zh-cn"
     languageName = "简体中文"
-    title = "yanran测试标题"
+    title = "雅然丛刊"
     weight = 1
 
 # ==================== 其他配置（保留你原来的） ====================
