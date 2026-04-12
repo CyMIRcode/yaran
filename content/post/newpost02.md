@@ -3,7 +3,7 @@ title: "Hugo 博客排版与功能全面测试"
 date: 2026-04-10
 draft: false
 tags: ["测试", "Hugo", "Markdown"]
-categories: ["禧年舊书"]
+slug: ["jiushu"]
 summary: "这是一篇用来测试 Hugo 主题排版、Markdown 语法渲染以及常用 Shortcodes 显示效果的占位文章。"
 ---
 
