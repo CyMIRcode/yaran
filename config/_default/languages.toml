@@ -1,30 +1,30 @@
 [en]
-    languageName = "Yaran magazine"
-    title        = "Deconstructing classics, reshaping values"
+    languageName = "English"
+    title        = "Yaran magazine"
     weight       = 1
 
     [en.params.sidebar]
-        subtitle = "Tell yesterday’s story in today’s language"
+        subtitle = "Deconstructing classics, reshaping values"
 
 [zh]
-    languageName = "雅然丛刊"
-    title        = "解构经典，重塑价值"
+    languageName = "简体中文"
+    title        = "雅然丛刊"
     weight       = 2
 
     [zh.params.sidebar]
-        subtitle = "用今天的语言讲好昨天的故事"
+        subtitle = "解构经典，重塑价"
 
 [zh-hant-tw]
-    languageName = "雅然叢刊"
-    title        = "解構經典，重塑價值"
+    languageName = "正體中文"
+    title        = "雅然叢刊"
     weight       = 3
 
     [zh-hant-tw.params.sidebar]
-        subtitle = "用今天的語言講好昨天的故事"
+        subtitle = "解構經典，重塑價值"
 
 [ja]
-    languageName = "雅然叢刊"
-    title        = "解構經典，重塑價值"
+    languageName = "日本语"
+    title        = "雅然叢刊"
     weight       = 4
 
     [ja.params.sidebar]
