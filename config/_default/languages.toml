@@ -1,31 +1,31 @@
 [en]
-    languageName = "English"
-    title        = "Hugo Theme Stack"
+    languageName = "Yaran magazine"
+    title        = "Deconstructing classics, reshaping values"
     weight       = 1
 
     [en.params.sidebar]
-        subtitle = "Card-style Hugo theme designed for bloggers"
+        subtitle = "Tell yesterday’s story in today’s language"
 
 [zh]
-    languageName = "简体中文"
-    title        = "Hugo 主题 Stack"
+    languageName = "雅然丛刊"
+    title        = "解构经典，重塑价值"
     weight       = 2
 
     [zh.params.sidebar]
-        subtitle = "为博客设计的卡片式 Hugo 主题"
+        subtitle = "用今天的语言讲好昨天的故事"
 
 [zh-hant-tw]
-    languageName = "正體中文"
-    title        = "Hugo 主題 Stack"
+    languageName = "雅然叢刊"
+    title        = "解構經典，重塑價值"
     weight       = 3
 
     [zh-hant-tw.params.sidebar]
-        subtitle = "為博客設計的卡片式 Hugo 主題"
+        subtitle = "用今天的語言講好昨天的故事"
 
 [ja]
-    languageName = "日本語"
-    title        = "Hugo Theme Stack"
+    languageName = "雅然叢刊"
+    title        = "解構經典，重塑價值"
     weight       = 4
 
     [ja.params.sidebar]
-        subtitle = "ブログ用のカードスタイルの Hugo テーマ"
+        subtitle = "昨日の物語を今日の言葉で上手に語る"
