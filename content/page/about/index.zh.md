@@ -4,10 +4,11 @@ description: 解构经典，重塑价值
 date: 2023-11-29
 lastmod: 2023-11-29
 menu:
-    main: 
-        weight: -90
-        params:
-            icon: user
+main: 
+weight: -90
+params:
+icon: user
+comments: false
 ---
 
 面对时间留下的经典，我们一直在思考：除了仰望，我们还能做些什么？
