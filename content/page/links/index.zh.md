@@ -5,7 +5,7 @@ links:
     description: GitHub 是世界上最大的软件开发平台。
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-   - title: Jimmy Cai
+  - title: Jimmy Cai
     description: 本站 hugo-theme-stack 模板原创作者。
     website: https://cai.im
     image: 
