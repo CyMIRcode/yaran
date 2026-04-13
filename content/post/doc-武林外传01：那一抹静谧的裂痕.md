@@ -7,7 +7,7 @@ tags:
 - 武林外传
 categories:
 - 解构经典
-summary: "..."
+summary: "自秀才将那碟桂花糕递到湘玉手中的一刻起，同福客栈的氛围变得诡谲起来。"
 ---
 {{< random-cover >}}
 
