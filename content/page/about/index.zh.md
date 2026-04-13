@@ -1,6 +1,7 @@
 ---
 title: 关于
 description: 解构经典，重塑价值
+image: assets/thumbnails/a.webp
 date: 2023-11-29
 lastmod: 2023-11-29
 menu:
