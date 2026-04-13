@@ -2,7 +2,7 @@
 title: 武林外传01：那一抹静谧的裂痕
 date: 2026-03-26
 draft: false
-image: "/thumbnails/a.webp"
+image: /thumbnails/a.webp
 tags:
 - 武林外传
 categories:
