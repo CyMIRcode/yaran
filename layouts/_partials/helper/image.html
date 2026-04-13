@@ -11,16 +11,29 @@
 
 {{ $result := dict }}
 
-{{/* ========== 最简单的确定性图片分配 开始 ========== */}}
+{{/* ========== 确定性图片分配逻辑 开始 ========== */}}
 {{ $currentImage := .Image }}
 {{ if not $currentImage }}
     {{ $letters := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
-    {{/* 直接拿文章标题的长度，除以15取余数*/}}
-    {{ $titleLen := len .Context.Title }}
+    
+    {{/* 智能寻找基准字符串来计算长度 */}}
+    {{ $seed := "" }}
+    {{ if and .Context .Context.Title }}
+        {{ $seed = .Context.Title }}
+    {{ else if and .Context .Context.name }}
+        {{ $seed = .Context.name }}
+    {{ end }}
+    
+    {{/* 如果实在找不到标题，就用个固定字符串兜底，防止报错 */}}
+    {{ if eq $seed "" }}
+        {{ $seed = "default-cover-seed" }}
+    {{ end }}
+    
+    {{ $titleLen := len $seed }}
     {{ $index := mod $titleLen 15 }}
     {{ $currentImage = printf "/covers/%s.webp" (index $letters $index) }}
 {{ end }}
-{{/* ========== 最简单的确定性图片分配 结束 ========== */}}
+{{/* ========== 确定性图片分配逻辑 结束 ========== */}}
 
 {{ if $currentImage }}
     {{ $url := urls.Parse $currentImage }}
@@ -72,10 +85,4 @@
                 "Resource" $resource
                 "Permalink" $permalink
                 "Height" nil
-                "Width" nil
-            }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-{{ return $result }}
+  
