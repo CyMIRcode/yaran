@@ -1,12 +1,28 @@
-{{ $thumbs := readDir "static/thumbnails" }}
+{{/* 随机封面图 shortcode for Hugo Stack */}}
+{{ $dir := "static/thumbnails" }}
+{{ $files := readDir $dir }}
+
 {{ $images := slice }}
-{{ range $thumbs }}
+{{ range $files }}
   {{ if and (not .IsDir) (in (slice ".webp" ".jpg" ".png" ".jpeg") (lower (path.Ext .Name))) }}
     {{ $images = $images | append (printf "/thumbnails/%s" .Name) }}
   {{ end }}
 {{ end }}
 
 {{ if gt (len $images) 0 }}
-  {{ $random := index (shuffle $images) 0 }}
-  {{ .Page.Store.Set "randomCover" $random }}
+  {{ $randomImg := index (shuffle $images) 0 }}
+  
+  <!-- 调试信息（构建时会看到，正式上线后可删除） -->
+  {{ warnf "随机封面选中: %s (共 %d 张图片)" $randomImg (len $images) }}
+
+  <img 
+    src="{{ $randomImg }}" 
+    alt="文章封面" 
+    class="random-cover"
+    style="width: 100%; height: auto; border-radius: 8px; margin: 1rem 0 2rem 0; display: block;"
+    loading="lazy">
+{{ else }}
+  <div style="color: red; padding: 20px; background: #fee;">
+    ⚠️ 未找到任何图片！请检查路径：static/thumbnails/ 是否存在 a.webp ~ o.webp
+  </div>
 {{ end }}
