@@ -20,7 +20,7 @@
     {{ $seed := "" }}
     {{ if and .Context .Context.Title }}
         {{ $seed = .Context.Title }}
-    {{ else if and .Context .Context.name }}
+    {{ else if and .Context (reflect.IsMap .Context) (isset .Context "name") }}
         {{ $seed = .Context.name }}
     {{ end }}
     
