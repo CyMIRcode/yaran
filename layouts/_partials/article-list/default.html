@@ -9,14 +9,10 @@
     {{ $randomName := index $shuffled 0 }}
     {{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
     
-    {{/* 隔离测试：如果强行传入随机图导致 helper 崩溃，就放弃使用 helper，只保留状态 */}}
-    {{ $tempImage := partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
+    {{/* 直接使用 img 标签，不再依赖 helper */}}
+    {{ $image = (printf "<img src=\"%s\" alt=\"%s\">" $randomImagePath .Title) | safeHTML }}
     
-    {{ if $tempImage }}
-        {{ $image = $tempImage }}
-    {{ end }}
-    
-    {{/* 无论如何，只要走到这一步，就标记为有图，确保 CSS 样式生效 */}}
+    {{/* 标记为有图，确保 CSS 样式生效 */}}
     {{ $hasRandom = true }}
 {{ end }}
 
