@@ -4,11 +4,24 @@
 {{/* 2. 如果没有图片，则从 static/thumbnails 获取随机插图 */}}
 {{ if not $image }}
     {{ $thumbnails := readDir "static/thumbnails" }}
-    {{/* 确保目录里有文件，避免报错 */}}
-    {{ if gt (len $thumbnails) 0 }}
-        {{ $randomThumbnail := index $thumbnails (randInt (len $thumbnails)) }}
-        {{/* 将随机图片的路径传给 image helper，保持渲染逻辑一致 */}}
-        {{ $image = partial "helper/image" (dict "Image" (printf "/thumbnails/%s" $randomThumbnail.Name) "Resources" .Resources "Context" .) }}
+    
+    {{/* 过滤掉目录，只保留真正的文件（如 .webp, .jpg） */}}
+    {{ $files := slice }}
+    {{ range $thumbnails }}
+        {{ if not .IsDir }}
+            {{ $files = $files | append . }}
+        {{ end }}
+    {{ end }}
+
+    {{/* 确保过滤后还有图片文件，避免报错 */}}
+    {{ if gt (len $files) 0 }}
+        {{ $randomFile := index $files (randInt (len $files)) }}
+        
+        {{/* 使用更安全的方式拼接路径：/thumbnails/文件名 */}}
+        {{ $randomImagePath := printf "%s%s" "/thumbnails/" $randomFile.Name }}
+        
+        {{/* 将随机图片的路径传给 image helper */}}
+        {{ $image = partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
     {{ end }}
 {{ end }}
 
