@@ -1,4 +1,3 @@
-{{/* 随机封面图 shortcode for Hugo Stack */}}
 {{ $dir := "static/thumbnails" }}
 {{ $files := readDir $dir }}
 
@@ -11,18 +10,12 @@
 
 {{ if gt (len $images) 0 }}
   {{ $randomImg := index (shuffle $images) 0 }}
-  
-  <!-- 调试信息（构建时会看到，正式上线后可删除） -->
-  {{ warnf "随机封面选中: %s (共 %d 张图片)" $randomImg (len $images) }}
-
   <img 
-    src="{{ $randomImg }}" 
-    alt="文章封面" 
+    src="{{ $randomImg | absURL }}" 
+    alt="随机文章封面"
     class="random-cover"
-    style="width: 100%; height: auto; border-radius: 8px; margin: 1rem 0 2rem 0; display: block;"
+    style="width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0 2rem 0; display: block;"
     loading="lazy">
 {{ else }}
-  <div style="color: red; padding: 20px; background: #fee;">
-    ⚠️ 未找到任何图片！请检查路径：static/thumbnails/ 是否存在 a.webp ~ o.webp
-  </div>
+  <p style="color:red;">⚠️ 未找到 thumbnails 文件夹中的图片</p>
 {{ end }}
