@@ -11,10 +11,6 @@
                 {{- $description = $description | default (T "list.page" (len .Pages)) -}}
             {{- end -}}
             {{- if or $description (not .Date.IsZero) -}}
-                {{/* 
-                    If it's a term, the date is extracted from the first page of the collection, which is not very useful.
-                    In that case, we prefer to display the description (if set), or the number of pages within the collection.
-                */}}
                 <footer class="article-meta">
                     {{- if or $IsTerm .Date.IsZero -}}
                         <span class="article-description">{{- $description -}}</span>
@@ -27,23 +23,49 @@
             {{- end -}}
         </div>
 
+        {{/* 图片处理逻辑开始 */}}
         {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+        
+        {{/* 如果文章本身没设置图片，则触发随机图逻辑 */}}
+        {{- $isRandom := false -}}
+        {{- if not $image -}}
+            {{- $files := readDir "static/thumbnails" -}}
+            {{- if $files -}}
+                {{- $randomFile := index (shuffle $files) 0 -}}
+                {{- $imagePath := printf "thumbnails/%s" $randomFile.Name -}}
+                {{- $image = dict "Permalink" ($imagePath | relURL) "Width" 60 "Height" 60 "Resource" nil -}}
+                {{- $isRandom = true -}}
+            {{- end -}}
+        {{- end -}}
+
         {{ if $image }}
         <div class="article-image">
-            {{ partial "helper/thumbnail-image" (dict 
-                "Resource" $image.Resource
-                "Width" 60
-                "Height" 60
-                "Resize" .Site.Params.ImageProcessing.Thumbnail.Enabled
-                "Attributes" (dict
-                    "src" $image.Permalink
-                    "alt" .Title
-                    "loading" "lazy"
-                    "width" $image.Width
-                    "height" $image.Height
-                )
-            ) }}
+            {{ if not $isRandom }}
+                {{/* 如果是文章自带图，使用原主题的缩略图处理机制 */}}
+                {{ partial "helper/thumbnail-image" (dict 
+                    "Resource" $image.Resource
+                    "Width" 60
+                    "Height" 60
+                    "Resize" .Site.Params.ImageProcessing.Thumbnail.Enabled
+                    "Attributes" (dict
+                        "src" $image.Permalink
+                        "alt" .Title
+                        "loading" "lazy"
+                        "width" $image.Width
+                        "height" $image.Height
+                    )
+                ) }}
+            {{ else }}
+                {{/* 如果是静态随机图，直接输出 img 标签 */}}
+                <img src="{{ $image.Permalink }}" 
+                     alt="{{ $.Title }}" 
+                     width="60" 
+                     height="60" 
+                     style="object-fit: cover;"
+                     loading="lazy">
+            {{ end }}
         </div>
         {{ end }}
+        {{/* 图片处理逻辑结束 */}}
     </a>
 </article>
