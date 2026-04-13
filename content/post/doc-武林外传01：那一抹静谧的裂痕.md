@@ -2,12 +2,12 @@
 title: 武林外传01：那一抹静谧的裂痕
 date: 2026-03-26
 draft: false
-image: ""
+image: ""     
 tags:
 - 武林外传
 categories:
 - 解构经典
-summary: "自秀才将那碟桂花糕递到湘玉手中的一刻起，同福客栈的氛围变得诡谲起来。"
+summary: "..."
 ---
 {{< random-cover >}}
 
