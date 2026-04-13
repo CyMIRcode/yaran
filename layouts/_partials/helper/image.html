@@ -11,23 +11,16 @@
 
 {{ $result := dict }}
 
-{{/* ========== 基于MD5哈希的确定性图片选择 开始 ========== */}}
+{{/* ========== 最简单的确定性图片分配 开始 ========== */}}
 {{ $currentImage := .Image }}
 {{ if not $currentImage }}
     {{ $letters := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
-    {{/* 使用文章标题或唯一ID生成MD5哈希 */}}
-    {{ $hash := crypto.MD5 .Context.File.UniqueID }}
-    {{/* 将哈希字符串转换为数字（取前几位或计算总和） */}}
-    {{ $num := 0 }}
-    {{ range $i, $c := $hash }}
-        {{ $num = add $num (int (printf "%d" (strings.Rune $c))) }}
-    {{ end }}
-    {{/* 取模运算得到索引 */}}
-    {<br>
-    {{ $index := mod $num 15 }}
+    {{/* 直接拿文章标题的长度，除以15取余数*/}}
+    {{ $titleLen := len .Context.Title }}
+    {{ $index := mod $titleLen 15 }}
     {{ $currentImage = printf "/covers/%s.webp" (index $letters $index) }}
 {{ end }}
-{{/* ========== 基于MD5哈希的确定性图片选择 结束 ========== */}}
+{{/* ========== 最简单的确定性图片分配 结束 ========== */}}
 
 {{ if $currentImage }}
     {{ $url := urls.Parse $currentImage }}
