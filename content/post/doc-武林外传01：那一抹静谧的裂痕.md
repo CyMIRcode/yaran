@@ -2,6 +2,7 @@
 title: 武林外传01：那一抹静谧的裂痕
 date: 2026-03-26
 draft: false
+image: "{{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}{{ index $images (rand (len $images)) | printf \"/thumbnails/%s.webp\" }}"
 tags:
 - 武林外传
 categories:
