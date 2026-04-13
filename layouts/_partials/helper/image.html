@@ -29,8 +29,8 @@
         {{ $seed = "default-cover-seed" }}
     {{ end }}
     
-    {{ $titleLen := len $seed }}
-    {{ $index := mod $titleLen 15 }}
+    {{ $seedStr := printf "%v" $seed }}
+    {{ $index := mod (add (len $seedStr) (int (printf "%d" (strings.Rune (substr $seedStr 0 1))))) 15 }}
     {{ $currentImage = printf "/covers/%s.webp" (index $letters $index) }}
 {{ end }}
 {{/* ========== 确定性图片分配逻辑 结束 ========== */}}
