@@ -1,12 +1,12 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-description: 
+description: ""
 date: {{ .Date }}
-image: 
-math: 
-license: 
+image: ""
+math: false
+license: ""
 comments: true
 draft: true
 build:
-list: always    # Change to "never" to hide the page from the list
+  list: always
 ---
