@@ -11,6 +11,32 @@
 
 {{ $result := dict }}
 
+{{/* ========== 固定图库随机逻辑 开始 ========== */}}
+{{ if not .Image }}
+    {{/* 定义你的15张图片的字母池 */}}
+    {{ $letters := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
+    {{/* 随机抽取一个字母 */}}
+    {{ $randomLetter := index $letters (rand 15) }}
+    {{/* 拼接成完整的路径 */}}
+    {{ .Image = printf "/covers/%s.webp" $randomLetter }}
+{{ end }}
+{{/* ========== 固定图库随机逻辑 结束 ========== */}}
+
+{{ if .Image }}
+    {{ $url := urls.Parse .Image }}
+    {{ $permalink := .Image }}
+    {{ $resource := dict
+        "Resource" nil
+        "Permalink" $permalink
+        "Height" nil
+        "Width" nil
+    }}
+    {{ $local := true }}
+
+    {{ if not (in (slice "https" "http") $url.Scheme) }}
+        {{/* Local image */}}
+        {{ $resource = resources.Get (strings.TrimPrefix "/" .Image) }}
+
 {{ if .Image }}
     {{ $url := urls.Parse .Image }}
     {{ $permalink := .Image }}
