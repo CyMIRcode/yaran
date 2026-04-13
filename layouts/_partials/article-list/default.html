@@ -1,4 +1,17 @@
+{{/* 1. 先尝试获取文章原本设置的图片 */}}
 {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
+
+{{/* 2. 如果没有图片，则从 static/thumbnails 获取随机插图 */}}
+{{ if not $image }}
+    {{ $thumbnails := readDir "static/thumbnails" }}
+    {{/* 确保目录里有文件，避免报错 */}}
+    {{ if gt (len $thumbnails) 0 }}
+        {{ $randomThumbnail := index $thumbnails (randInt (len $thumbnails)) }}
+        {{/* 将随机图片的路径传给 image helper，保持渲染逻辑一致 */}}
+        {{ $image = partial "helper/image" (dict "Image" (printf "/thumbnails/%s" $randomThumbnail.Name) "Resources" .Resources "Context" .) }}
+    {{ end }}
+{{ end }}
+
 <article class="{{ if $image }}has-image{{ end }}">
     {{ partial "article/components/header" (dict "Page" . "IsList" true) }}
 </article>
