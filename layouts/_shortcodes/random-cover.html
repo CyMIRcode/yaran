@@ -12,11 +12,11 @@
   {{ $randomImg := index (shuffle $images) 0 }}
   {{ $fullPath := $randomImg | absURL }}
 
-  <!-- 同时设置 image 和 thumbnail，让 Stack 主题首页卡片能读取到 -->
+  <!-- 同时设置 Stack 主题常用字段（image 是原版最常见的） -->
   {{ .Page.Store.Set "image" $fullPath }}
   {{ .Page.Store.Set "thumbnail" $fullPath }}
 
-  <!-- 文章内显示大图（你已经能看到） -->
+  <!-- 在文章正文显示（你已经能看到） -->
   <img src="{{ $fullPath }}" 
        alt="随机配图" 
        style="width:100%; height:auto; border-radius:8px; margin:1.5rem 0 2rem 0; display:block;" 
