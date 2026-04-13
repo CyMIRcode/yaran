@@ -12,15 +12,15 @@
   {{ $randomImg := index (shuffle $images) 0 }}
   {{ $fullPath := $randomImg | absURL }}
 
-  <!-- 设置 thumbnail 参数，供首页卡片使用 -->
+  <!-- 同时设置 image 和 thumbnail，让 Stack 主题首页卡片能读取到 -->
+  {{ .Page.Store.Set "image" $fullPath }}
   {{ .Page.Store.Set "thumbnail" $fullPath }}
 
-  <!-- 在文章正文显示随机图（可选） -->
+  <!-- 文章内显示大图（你已经能看到） -->
   <img src="{{ $fullPath }}" 
        alt="随机配图" 
        style="width:100%; height:auto; border-radius:8px; margin:1.5rem 0 2rem 0; display:block;" 
        loading="lazy">
-
 {{ else }}
   <p style="color:red;">未找到缩略图</p>
 {{ end }}
