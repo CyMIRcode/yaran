@@ -8,9 +8,7 @@ categories:
 - 解构经典
 summary: "自秀才将那碟桂花糕递到湘玉手中的一刻起，同福客栈的氛围变得诡谲起来。"
 ---
-
-<p>HTML 测试图片：</p>
-<img src="/thumbnails/a.webp" alt="测试图片" style="width: 100%; max-width: 600px; border-radius: 8px; display: block; margin: 1rem 0;">
+{{< random-cover >}}
 
 自秀才将那碟桂花糕递到湘玉手中的一刻起，同福客栈的氛围变得诡谲起来。
 
