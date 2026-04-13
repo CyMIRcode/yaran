@@ -1,15 +1,4 @@
 {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
-
-{{/* 如果文章没有图，就生成一个随机图 URL 并临时添加到 .Params 中 */}}
-{{ if not $image }}
-    {{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
-    {{ $randomName := index $images (rand (len $images)) }}
-    {{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
-    
-    {{/* 关键：把随机图 URL 临时存到 .Params 中，这样 header 组件就能拿到它 */}}
-    {{ .Params.Set "image" $randomImagePath }}
-{{ end }}
-
 <article class="{{ if $image }}has-image{{ end }}">
     {{ partial "article/components/header" (dict "Page" . "IsList" true) }}
 </article>
