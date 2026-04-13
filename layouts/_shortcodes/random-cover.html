@@ -1,0 +1,12 @@
+{{ $thumbs := readDir "static/thumbnails" }}
+{{ $images := slice }}
+{{ range $thumbs }}
+  {{ if and (not .IsDir) (in (slice ".webp" ".jpg" ".png" ".jpeg") (lower (path.Ext .Name))) }}
+    {{ $images = $images | append (printf "/thumbnails/%s" .Name) }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $images) 0 }}
+  {{ $random := index (shuffle $images) 0 }}
+  {{ .Page.Store.Set "randomCover" $random }}
+{{ end }}
