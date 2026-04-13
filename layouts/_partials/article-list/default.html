@@ -1,10 +1,25 @@
 {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
+{{ $hasRandom := false }}
+
 {{ if not $image }}
-{{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
-{{ $randomName := index $images (randInt (len $images)) }}
-{{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
-{{ $image = partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
+    {{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
+    
+    {{/* 使用 Hugo 0.60+ 版本的随机函数 */}}
+    {{ $randomIndex := (rand (len $images)) }}
+    {{ $randomName := index $images $randomIndex }}
+    {{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
+    
+    {{/* 隔离测试：如果强行传入随机图导致 helper 崩溃，就放弃使用 helper，只保留状态 */}}
+    {{ $tempImage := partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
+    
+    {{ if $tempImage }}
+        {{ $image = $tempImage }}
+    {{ end }}
+    
+    {{/* 无论如何，只要走到这一步，就标记为有图，确保 CSS 样式生效 */}}
+    {{ $hasRandom = true }}
 {{ end }}
-<article class="{{ if $image }}has-image{{ end }}">
+
+<article class="{{ if or $image $hasRandom }}has-image{{ end }}">
     {{ partial "article/components/header" (dict "Page" . "IsList" true) }}
 </article>
