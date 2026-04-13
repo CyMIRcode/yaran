@@ -1,28 +1,16 @@
 {{/* 1. 先尝试获取文章原本设置的图片 */}}
 {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
 
-{{/* 2. 如果没有图片，则从 static/thumbnails 获取随机插图 */}}
+{{/* 2. 如果没有图片，从你上传的 a-o 这15张里随机选一张 */}}
 {{ if not $image }}
-    {{ $thumbnails := readDir "static/thumbnails" }}
-    
-    {{/* 过滤掉目录，只保留真正的文件（如 .webp, .jpg） */}}
-    {{ $files := slice }}
-    {{ range $thumbnails }}
-        {{ if not .IsDir }}
-            {{ $files = $files | append . }}
-        {{ end }}
-    {{ end }}
-
-    {{/* 确保过滤后还有图片文件，避免报错 */}}
-    {{ if gt (len $files) 0 }}
-        {{ $randomFile := index $files (randInt (len $files)) }}
-        
-        {{/* 使用更安全的方式拼接路径：/thumbnails/文件名 */}}
-        {{ $randomImagePath := printf "%s%s" "/thumbnails/" $randomFile.Name }}
-        
-        {{/* 将随机图片的路径传给 image helper */}}
-        {{ $image = partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
-    {{ end }}
+    {{/* 把你命名的 15 张图片直接列出来 */}}
+    {{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
+    {{/* 随机抽取一个名字 */}}
+    {{ $randomName := index $images (randInt (len $images)) }}
+    {{/* 拼接成完整的路径 */}}
+    {{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
+    {{/* 传给 image helper 渲染 */}}
+    {{ $image = partial "helper/image" (dict "Image" $randomImagePath "Resources" .Resources "Context" .) }}
 {{ end }}
 
 <article class="{{ if $image }}has-image{{ end }}">
