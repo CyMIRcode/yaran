@@ -1,4 +1,4 @@
-{{/* 随机缩略图 Shortcode - 专为 Stack 主题优化 */}}
+{{/* 为 Stack 主题设置随机封面图（用于首页卡片 + 文章页） */}}
 {{ $dir := "static/thumbnails" }}
 {{ $files := readDir $dir }}
 
@@ -12,16 +12,17 @@
 {{ if gt (len $images) 0 }}
   {{ $randomImg := index (shuffle $images) 0 }}
   
-  <!-- 输出 HTML img 标签，绕过 Markdown 渲染问题 -->
+  <!-- 把随机图片路径存入页面变量，让 Stack 主题的列表页和文章页都能读取 -->
+  {{ .Page.Store.Set "randomCover" ($randomImg | absURL) }}
+  
+  <!-- 可选：在文章正文也显示这张图（如果你还想在文章内看到） -->
   <img 
     src="{{ $randomImg | absURL }}" 
     alt="随机文章配图"
     class="random-thumbnail"
     style="width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0 2rem 0; display: block;"
     loading="lazy">
-    
+
 {{ else }}
-  <p style="color: red; padding: 15px; background: #ffebee; border-radius: 4px;">
-    ⚠️ 未找到图片，请确认 static/thumbnails/ 文件夹中有 a.webp ~ o.webp
-  </p>
+  <p style="color: red;">未找到缩略图文件夹中的图片</p>
 {{ end }}
