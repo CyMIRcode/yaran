@@ -4,9 +4,9 @@
 {{ if not $image }}
     {{ $images := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
     
-    {{/* 使用 Hugo 0.60+ 版本的随机函数 */}}
-    {{ $randomIndex := (rand (len $images)) }}
-    {{ $randomName := index $images $randomIndex }}
+    {{/* 使用 Hugo 0.60 之前的 shuffle 函数 */}}
+    {{ $shuffled := shuffle $images }}
+    {{ $randomName := index $shuffled 0 }}
     {{ $randomImagePath := printf "/thumbnails/%s.webp" $randomName }}
     
     {{/* 隔离测试：如果强行传入随机图导致 helper 崩溃，就放弃使用 helper，只保留状态 */}}
