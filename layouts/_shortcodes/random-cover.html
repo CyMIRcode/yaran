@@ -9,18 +9,14 @@
 {{ end }}
 
 {{ if gt (len $images) 0 }}
-  {{ $randomImg := index (shuffle $images) 0 }}
-  {{ $fullPath := $randomImg | absURL }}
+  {{ $randomImg := index (shuffle $images) 0 | absURL }}
 
-  <!-- 同时设置 Stack 主题常用字段（image 是原版最常见的） -->
-  {{ .Page.Store.Set "image" $fullPath }}
-  {{ .Page.Store.Set "thumbnail" $fullPath }}
+  <!-- 直接设置 .Params.image（Stack 主题列表页最依赖的字段） -->
+  {{ .Page.Params.image = $randomImg }}
 
-  <!-- 在文章正文显示（你已经能看到） -->
-  <img src="{{ $fullPath }}" 
+  <!-- 文章内显示 -->
+  <img src="{{ $randomImg }}" 
        alt="随机配图" 
        style="width:100%; height:auto; border-radius:8px; margin:1.5rem 0 2rem 0; display:block;" 
        loading="lazy">
-{{ else }}
-  <p style="color:red;">未找到缩略图</p>
 {{ end }}
