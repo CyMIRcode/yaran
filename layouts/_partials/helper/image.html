@@ -1,43 +1,8 @@
-/// Params:
-///     Resources: Where to search for images
-///     Image: Image URL
-///     Context: page context (used to access the configuration)
-
-/// Returns:
-///     Resource: Hugo image resource object
-///     Permalink: Image URL
-///     Height: Image height
-///     Width: Image width
-
 {{ $result := dict }}
 
-{{/* ========== 确定性图片分配逻辑 开始 ========== */}}
-{{ $currentImage := .Image }}
-{{ if not $currentImage }}
-    {{ $letters := slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" }}
-    
-    {{/* 智能寻找基准字符串来计算长度 */}}
-    {{ $seed := "" }}
-    {{ if and .Context .Context.Title }}
-        {{ $seed = .Context.Title }}
-    {{ else if and .Context (reflect.IsMap .Context) (isset .Context "name") }}
-        {{ $seed = .Context.name }}
-    {{ end }}
-    
-    {{/* 如果实在找不到标题，就用个固定字符串兜底，防止报错 */}}
-    {{ if eq $seed "" }}
-        {{ $seed = "default-cover-seed" }}
-    {{ end }}
-    
-    {{ $seedStr := printf "%v" $seed }}
-    {{ $index := mod (add (len $seedStr) (int (printf "%d" (strings.Rune (substr $seedStr 0 1))))) 15 }}
-    {{ $currentImage = printf "/covers/%s.webp" (index $letters $index) }}
-{{ end }}
-{{/* ========== 确定性图片分配逻辑 结束 ========== */}}
-
-{{ if $currentImage }}
-    {{ $url := urls.Parse $currentImage }}
-    {{ $permalink := $currentImage }}
+{{ if .Image }}
+    {{ $url := urls.Parse .Image }}
+    {{ $permalink := .Image }}
     {{ $resource := dict
         "Resource" nil
         "Permalink" $permalink
@@ -48,7 +13,7 @@
 
     {{ if not (in (slice "https" "http") $url.Scheme) }}
         {{/* Local image */}}
-        {{ $resource = resources.Get (strings.TrimPrefix "/" $currentImage) }}
+        {{ $resource = resources.Get (strings.TrimPrefix "/" .Image) }}
     {{ else }}
         {{/* Remote image */}}
         {{ with try (resources.GetRemote $url (dict "timeout" .Context.Site.Params.imageProcessing.external.timeout)) }}
