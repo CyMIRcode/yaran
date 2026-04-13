@@ -29,7 +29,7 @@
         {{/* 如果文章本身没设置图片，则触发随机图逻辑 */}}
         {{- $isRandom := false -}}
         {{- if not $image -}}
-            {{- $files := readDir "static/thumbnails" -}}
+            {{- $files := readDir "assets/thumbnails" -}}
             {{- if $files -}}
                 {{- $randomFile := index (shuffle $files) 0 -}}
                 {{- $imagePath := printf "thumbnails/%s" $randomFile.Name -}}
