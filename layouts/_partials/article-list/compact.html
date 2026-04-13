@@ -10,8 +10,30 @@
         </div>
 
         <div class="article-image">
-            {{/* 彻底删掉所有 readDir 代码，直接写死一个现成的图片路径测试 */}}
-            <img src="/thumbnails/a.webp" alt="{{ .Title }}" width="60" height="60" style="object-fit: cover; border-radius: 8px;">
+            {{- $imageParam := .Params.image -}}
+            
+            {{/* 如果文章没有手动设置 image 参数，则执行随机抓取 */}}
+            {{- if not $imageParam -}}
+                {{- if (fileExists "assets/thumbnails") -}}
+                    {{- $files := readDir "assets/thumbnails" -}}
+                    {{- if $files -}}
+                        {{- $randomFile := index (shuffle $files) 0 -}}
+                        {{- $imageParam = printf "thumbnails/%s" $randomFile.Name -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+
+            {{- if $imageParam -}}
+                {{/* 尝试作为资源读取（assets 模式） */}}
+                {{- $resource := resources.Get $imageParam -}}
+                {{- if $resource -}}
+                    {{- $thumb := $resource.Fill "120x120" -}}
+                    <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" width="60" height="60" style="object-fit: cover; border-radius: 8px;">
+                {{- else -}}
+                    {{/* 否则作为静态路径读取（static 或外链模式） */}}
+                    <img src="{{ $imageParam | relURL }}" alt="{{ .Title }}" width="60" height="60" style="object-fit: cover; border-radius: 8px;">
+                {{- end -}}
+            {{- end -}}
         </div>
     </a>
 </article>
