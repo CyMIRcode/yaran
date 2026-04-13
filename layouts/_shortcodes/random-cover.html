@@ -1,4 +1,3 @@
-{{/* 为 Stack 主题设置随机封面图（用于首页卡片 + 文章页） */}}
 {{ $dir := "static/thumbnails" }}
 {{ $files := readDir $dir }}
 
@@ -11,18 +10,17 @@
 
 {{ if gt (len $images) 0 }}
   {{ $randomImg := index (shuffle $images) 0 }}
-  
-  <!-- 把随机图片路径存入页面变量，让 Stack 主题的列表页和文章页都能读取 -->
-  {{ .Page.Store.Set "randomCover" ($randomImg | absURL) }}
-  
-  <!-- 可选：在文章正文也显示这张图（如果你还想在文章内看到） -->
-  <img 
-    src="{{ $randomImg | absURL }}" 
-    alt="随机文章配图"
-    class="random-thumbnail"
-    style="width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0 2rem 0; display: block;"
-    loading="lazy">
+  {{ $fullPath := $randomImg | absURL }}
+
+  <!-- 设置 thumbnail 参数，供首页卡片使用 -->
+  {{ .Page.Store.Set "thumbnail" $fullPath }}
+
+  <!-- 在文章正文显示随机图（可选） -->
+  <img src="{{ $fullPath }}" 
+       alt="随机配图" 
+       style="width:100%; height:auto; border-radius:8px; margin:1.5rem 0 2rem 0; display:block;" 
+       loading="lazy">
 
 {{ else }}
-  <p style="color: red;">未找到缩略图文件夹中的图片</p>
+  <p style="color:red;">未找到缩略图</p>
 {{ end }}
