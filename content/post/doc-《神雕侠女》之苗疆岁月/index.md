@@ -2,6 +2,7 @@
 title: 《神雕侠女》之苗疆岁月
 date: 2022-01-09
 draft: false
+image: "/covers/a.webp"
 tags:
 - 神雕侠女
 - 黄蓉
