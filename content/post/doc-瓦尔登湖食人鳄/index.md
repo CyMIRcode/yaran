@@ -2,6 +2,7 @@
 title: 瓦尔登湖食人鳄
 date: 2023-02-05
 draft: false
+image: "/covers/c.webp"
 tags:
 - 瓦尔登湖
 - 梭罗
