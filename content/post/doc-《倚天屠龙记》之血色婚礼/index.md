@@ -2,6 +2,7 @@
 title: 《倚天屠龙记》之血色婚礼
 date: 2021-07-24
 draft: false
+image: "/covers/d.webp"
 tags:
 - ​倚天屠龙记
 - 张无忌
