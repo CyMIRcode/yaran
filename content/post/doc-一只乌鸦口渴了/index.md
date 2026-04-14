@@ -2,6 +2,7 @@
 title: 一只乌鸦口渴了
 date: 2024-08-15
 draft: false
+image: "/covers/e.webp"
 tags:
 - 一只乌鸦口渴了
 - 渴死
