@@ -2,6 +2,7 @@
 title: 背影
 date: 2026-01-01
 draft: false
+image: "/covers/e.webp"
 tags:
 - 背影
 - 朱自清
