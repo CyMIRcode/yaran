@@ -2,6 +2,7 @@
 title: 欢迎访问雅然丛刊！
 date: 2023-11-22
 draft: false
+image: "/covers/l.webp"
 tags:
 - 雅然从刊
 - 解构主义
