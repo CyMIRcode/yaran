@@ -2,6 +2,7 @@
 title: 《三国演义》之关公月下斩貂蝉
 date: 2023-11-12
 draft: false
+image: "/covers/a.webp"
 tags:
 - 三国演义
 - 关羽
