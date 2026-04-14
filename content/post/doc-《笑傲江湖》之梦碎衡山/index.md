@@ -2,6 +2,7 @@
 title: 《笑傲江湖》之梦碎衡山
 date: 2026-01-30
 draft: false
+image: "/covers/c.webp"
 tags:
 - 笑傲江湖
 - 令狐冲
