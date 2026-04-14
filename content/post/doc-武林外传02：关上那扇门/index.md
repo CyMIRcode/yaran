@@ -2,7 +2,7 @@
 title: 武林外传02：关上那扇门
 date: 2026-04-01
 draft: false
-image: "/covers/m.webp"
+image: "/covers/l.webp"
 tags:
 - none
 categories:
