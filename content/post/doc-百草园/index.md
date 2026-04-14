@@ -2,6 +2,7 @@
 title: 百草园
 date: 2025-01-30
 draft: false
+image: "/covers/d.webp"
 tags:
 - 鲁迅
 - 赤练蛇
