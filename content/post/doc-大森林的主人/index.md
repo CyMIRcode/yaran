@@ -2,6 +2,7 @@
 title: 大森林的主人
 date: 2023-07-06
 draft: false
+image: "/covers/h.webp"
 tags:
 - 大森林的主人
 - 松鸡
