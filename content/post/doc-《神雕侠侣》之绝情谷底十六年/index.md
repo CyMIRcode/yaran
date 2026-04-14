@@ -2,6 +2,7 @@
 title: 《神雕侠侣》之绝情谷底十六年
 date: 2022-12-10
 draft: false
+image: "/covers/o.webp"
 tags:
 - 神雕侠侣
 - 小龙女
