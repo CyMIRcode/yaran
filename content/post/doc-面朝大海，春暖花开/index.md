@@ -2,6 +2,7 @@
 title: 面朝大海，春暖花开
 date: 2026-03-20
 draft: false
+image: "/covers/f.webp"
 tags:
 - 海子
 - 面朝大海春暖花开
