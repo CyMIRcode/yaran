@@ -2,6 +2,7 @@
 title: 泰山游
 date: 2026-01-19
 draft: false
+image: "/covers/o.webp"
 tags:
 - 泰山
 - 挑山工
