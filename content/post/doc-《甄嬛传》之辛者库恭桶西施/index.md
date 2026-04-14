@@ -1,6 +1,7 @@
 ---
 title: 《甄嬛传》之辛者库恭桶西施
 date: 2025-12-28
+image: "/covers/m.webp"
 tags:
 - 甄嬛传
 - 辛者库
