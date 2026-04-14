@@ -2,6 +2,7 @@
 title: 火烧云
 date: 2025-11-27
 draft: false
+image: "/covers/b.webp"
 tags:
 - 火烧云
 - 核战
