@@ -2,6 +2,7 @@
 title: 小石潭记
 date: 2023-11-08
 draft: false
+image: "/covers/i.webp"
 tags:
 - 小石潭记
 - 柳宗元
