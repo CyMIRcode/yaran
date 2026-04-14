@@ -2,6 +2,7 @@
 title: 撒哈拉的故事
 date: 2026-03-21
 draft: false
+image: "/covers/j.webp"
 tags:
 - 三毛
 - 撒哈拉的故事
