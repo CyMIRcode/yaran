@@ -2,6 +2,7 @@
 title: 《水浒传》之大义灭亲阎婆惜
 date: 2023-02-19
 draft: false
+image: "/covers/j.webp"
 tags:
 - 水浒传
 - 阎婆惜
