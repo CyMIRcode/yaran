@@ -2,6 +2,7 @@
 title: 《水浒传》之潘金莲上梁山
 date: 2020-01-28
 draft: false
+image: "/covers/l.webp"
 tags:
 - 水浒传
 - 潘金莲
