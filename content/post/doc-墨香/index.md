@@ -2,6 +2,7 @@
 title: 墨香
 date: 2024-02-18
 draft: false
+image: "/covers/g.webp"
 tags:
 - 墨水面包
 - 名人传记
