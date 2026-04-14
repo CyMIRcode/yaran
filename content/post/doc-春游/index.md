@@ -2,6 +2,7 @@
 title: 春游
 date: 2025-03-23
 draft: false
+image: "/covers/k.webp"
 tags:
 - 春游
 - 划船
