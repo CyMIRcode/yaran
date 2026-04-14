@@ -2,6 +2,7 @@
 title: 《三国演义》之草船借箭
 date: 2020-08-21
 draft: false
+image: "/covers/b.webp"
 tags:
 - 三国演义
 - 草船借箭
