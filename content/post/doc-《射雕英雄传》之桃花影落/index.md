@@ -2,6 +2,7 @@
 title: 《射雕英雄传》之桃花影落
 date: 2025-11-09
 draft: false
+image: "/covers/h.webp"
 tags:
 - 射雕英雄传
 - 黄蓉
