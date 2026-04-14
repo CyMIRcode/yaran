@@ -2,6 +2,7 @@
 title: 《天龙八部》之丐帮夫人王语嫣
 date: 2022-04-09
 draft: false
+image: "/covers/f.webp"
 tags:
 - 天龙八部
 - 游坦之
