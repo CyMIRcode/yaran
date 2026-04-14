@@ -2,6 +2,7 @@
 title: 凿壁偷光
 date: 2025-09-20
 draft: false
+image: "/covers/f.webp"
 tags:
 - 凿壁偷光
 - 匡衡
