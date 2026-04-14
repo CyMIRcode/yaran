@@ -2,6 +2,7 @@
 title: 《水浒传》之以和为贵
 date: 2024-02-12
 draft: false
+image: "/covers/i.webp"
 tags:
 - 水浒传
 - 宋江
