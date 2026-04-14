@@ -2,6 +2,7 @@
 title: 武林外传03：第十个“正”字
 date: 2026-04-10
 draft: false
+image: "/covers/n.webp"
 tags:
 - 武林外传
 categories:
