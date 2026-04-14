@@ -2,6 +2,7 @@
 title: 《天龙八部》之恶紫夺朱
 date: 2020-11-16
 draft: false
+image: "/covers/g.webp"
 tags:
 - 天龙八部
 - 乔峰
