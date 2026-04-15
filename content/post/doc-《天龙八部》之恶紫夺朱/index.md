@@ -2,6 +2,9 @@
 title: 《天龙八部》之恶紫夺朱
 date: 2020-11-16
 draft: false
+url: "/p/天龙八部之恶紫夺朱/" 
+aliases:
+- /post/8.html
 image: "/covers/g.webp"
 tags:
 - 天龙八部
