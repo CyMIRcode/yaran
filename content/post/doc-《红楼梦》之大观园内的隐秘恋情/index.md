@@ -2,6 +2,9 @@
 title: 《红楼梦》之大观园内的隐秘恋情
 date: 2024-04-11
 draft: false
+url: "/p/红楼梦之大观园内的隐秘恋情/" 
+aliases:
+    - /post/19.html
 image: "/covers/d.webp"
 tags:
 - 红楼梦
