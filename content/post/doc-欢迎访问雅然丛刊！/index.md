@@ -2,17 +2,16 @@
 title: 欢迎访问雅然丛刊！
 date: 2023-11-22
 draft: false
-	url: "/p/欢迎访问雅然丛刊/"
-	aliases:
-		- /post/1.html
+url: "/p/欢迎访问雅然丛刊/"
+aliases:
+  - /post/1.html
 image: "/covers/l.webp"
 tags:
-- 雅然从刊
-- 解构主义
+  - 雅然丛刊
+  - 解构主义
 categories:
-- 公告
+  - 公告
 summary: "我们致力于为广大读者提供一个舒适、便捷的阅读环境，让您在忙碌的生活中找到一片宁静的阅读天地。"
-
 ---
 
 欢迎访问雅然丛刊！
