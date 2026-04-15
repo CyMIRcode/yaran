@@ -2,6 +2,9 @@
 title: 武林外传02：关上那扇门
 date: 2026-04-01
 draft: false
+url: "p/武林外传02关上那扇门/" 
+aliases:
+    - /post/49.html
 image: "/covers/l.webp"
 tags:
 - none
