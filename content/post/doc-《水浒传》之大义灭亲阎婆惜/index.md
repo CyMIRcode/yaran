@@ -2,6 +2,9 @@
 title: 《水浒传》之大义灭亲阎婆惜
 date: 2023-02-19
 draft: false
+url: "/p/水浒传之大义灭亲阎婆惜/" 
+aliases:
+- /post/15.html
 image: "/covers/j.webp"
 tags:
 - 水浒传
