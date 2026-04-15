@@ -2,6 +2,9 @@
 title: 墨香
 date: 2024-02-18
 draft: false
+url: "/p/墨香/" 
+aliases:
+    - /post/25.html
 image: "/covers/g.webp"
 tags:
 - 墨水面包
