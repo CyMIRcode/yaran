@@ -2,6 +2,9 @@
 title: 《倚天屠龙记》之张教主的盘算
 date: 2026-03-09
 draft: false
+url: "/p/倚天屠龙记之张教主的盘算/" 
+aliases:
+    - /post/44.html
 image: "/covers/c.webp"
 tags:
 - 倚天屠龙记
