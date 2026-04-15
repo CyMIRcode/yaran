@@ -2,6 +2,9 @@
 title: 一只乌鸦口渴了
 date: 2024-08-15
 draft: false
+url: "/p/一只乌鸦口渴了/" 
+aliases:
+    - /post/29.html
 image: "/covers/e.webp"
 tags:
 - 一只乌鸦口渴了
