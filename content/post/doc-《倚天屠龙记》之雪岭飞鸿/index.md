@@ -2,6 +2,9 @@
 title: 《倚天屠龙记》之雪岭飞鸿
 date: 2021-06-11
 draft: false.
+url: "/p/倚天屠龙记之雪岭飞鸿/" 
+aliases:
+- /post/9.html
 image: "/covers/e.webp"
 tags:
 - 倚天屠龙记
