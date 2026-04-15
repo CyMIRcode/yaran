@@ -2,6 +2,9 @@
 title: 春游
 date: 2025-03-23
 draft: false
+url: "/p/春游/" 
+aliases:
+    - /post/31.html
 image: "/covers/k.webp"
 tags:
 - 春游
