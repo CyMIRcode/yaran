@@ -2,6 +2,9 @@
 title: 百草园
 date: 2025-01-30
 draft: false
+url: "/p/百草园/" 
+aliases:
+    - /post/27.html
 image: "/covers/d.webp"
 tags:
 - 鲁迅
