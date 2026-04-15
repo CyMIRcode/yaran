@@ -2,6 +2,10 @@
 title: 欢迎访问雅然丛刊！
 date: 2023-11-22
 draft: false
+	url: "/p/欢迎访问雅然丛刊/" 
+	aliases:
+		- /post/1.html
+
 image: "/covers/l.webp"
 tags:
 - 雅然从刊
