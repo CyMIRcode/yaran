@@ -2,6 +2,9 @@
 title: 大森林的主人
 date: 2023-07-06
 draft: false
+url: "/p/大森林的主人/" 
+aliases:
+- /post/26.html
 image: "/covers/h.webp"
 tags:
 - 大森林的主人
