@@ -2,6 +2,9 @@
 title: 《水浒传》之李逵之死
 date: 2023-08-18
 draft: false
+url: "/p/水浒传之李逵之死/" 
+aliases:
+- /post/16.html
 image: "/covers/k.webp"
 tags:
 - 水浒传
