@@ -2,6 +2,9 @@
 title: 凿壁偷光
 date: 2025-09-20
 draft: false
+url: "/p/凿壁偷光/" 
+aliases:
+    - /post/28.html
 image: "/covers/f.webp"
 tags:
 - 凿壁偷光
