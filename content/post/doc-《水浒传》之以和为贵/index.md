@@ -2,6 +2,9 @@
 title: 《水浒传》之以和为贵
 date: 2024-02-12
 draft: false
+url: "/p/水浒传之以和为贵/" 
+aliases:
+    - /post/18.html
 image: "/covers/i.webp"
 tags:
 - 水浒传
