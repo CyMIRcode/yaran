@@ -2,6 +2,9 @@
 title: 撒哈拉的故事
 date: 2026-03-21
 draft: false
+url: "/p/撒哈拉的故事/" 
+aliases:
+    - /post/47.html
 image: "/covers/j.webp"
 tags:
 - 三毛
