@@ -2,6 +2,9 @@
 title: 激流岛的下午
 date: 2026-03-18
 draft: false
+url: "/p/激流岛的下午/" 
+aliases:
+    - /post/45.html
 image: "/covers/a.webp"
 tags:
 - 顾城
