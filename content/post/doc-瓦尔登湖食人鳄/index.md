@@ -2,6 +2,9 @@
 title: 瓦尔登湖食人鳄
 date: 2023-02-05
 draft: false
+url: "/p/瓦尔登湖食人鳄/" 
+aliases:
+- /post/22.html
 image: "/covers/c.webp"
 tags:
 - 瓦尔登湖
