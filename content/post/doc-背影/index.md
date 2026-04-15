@@ -4,7 +4,7 @@ date: 2026-01-01
 draft: false
 url: "/p/背影/" 
 aliases:
-    - /23.html
+    - /post/23.html
 image: "/covers/e.webp"
 tags:
 - 背影
