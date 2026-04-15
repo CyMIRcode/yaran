@@ -2,6 +2,9 @@
 title: 火烧云
 date: 2025-11-27
 draft: false
+url: "/p/火烧云/" 
+aliases:
+    - /30.html
 image: "/covers/b.webp"
 tags:
 - 火烧云
