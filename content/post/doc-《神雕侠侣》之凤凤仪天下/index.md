@@ -1,8 +1,8 @@
 ---
-title: 《神雕侠侣》之凤临天下
+title: 《神雕侠侣》之凤仪天下
 date: 2020-03-19
 draft: false
-url: "/p/神雕侠侣之凤临天下/" 
+url: "/p/神雕侠侣之凤仪天下/" 
 aliases:
 - /post/6.html
 image: "/covers/n.webp"
