@@ -2,6 +2,9 @@
 title: 《笑傲江湖》之梦碎衡山
 date: 2026-01-30
 draft: false
+url: "/p/笑傲江湖之梦碎衡山/" 
+aliases:
+    - /post/42.html
 image: "/covers/i.webp"
 tags:
 - 笑傲江湖
