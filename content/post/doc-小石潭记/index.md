@@ -2,6 +2,9 @@
 title: 小石潭记
 date: 2023-11-08
 draft: false
+url: "/p/小石潭记/" 
+aliases:
+- /post/24.html
 image: "/covers/i.webp"
 tags:
 - 小石潭记
