@@ -3,6 +3,9 @@ title: 《笑傲江湖》之推开那扇门
 date: 2026-02-15
 draft: false
 image: "/covers/b.webp"
+url: "/p/笑傲江湖之推开那扇门/" 
+aliases:
+    - /post/43.html
 tags:
 - 笑傲江湖
 - 令狐冲
