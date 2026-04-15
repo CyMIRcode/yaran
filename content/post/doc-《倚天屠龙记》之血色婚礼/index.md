@@ -2,6 +2,9 @@
 title: 《倚天屠龙记》之血色婚礼
 date: 2021-07-24
 draft: false
+url: "/p/倚天屠龙记之血色婚礼/" 
+aliases:
+- /post/11.html
 image: "/covers/d.webp"
 tags:
 - ​倚天屠龙记
