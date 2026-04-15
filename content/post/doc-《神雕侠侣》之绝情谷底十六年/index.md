@@ -2,6 +2,9 @@
 title: 《神雕侠侣》之绝情谷底十六年
 date: 2022-12-10
 draft: false
+url: "/p/神雕侠侣之绝情谷底十六年/" 
+aliases:
+- /post/14.html
 image: "/covers/o.webp"
 tags:
 - 神雕侠侣
