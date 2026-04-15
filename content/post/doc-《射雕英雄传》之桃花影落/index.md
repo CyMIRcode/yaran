@@ -1,6 +1,9 @@
 ---
 title: 《射雕英雄传》之桃花影落
 date: 2025-11-09
+url: "/p/射雕英雄传之桃花影落/" 
+aliases:
+    - /post/20.html
 draft: false
 image: "/covers/h.webp"
 tags:
