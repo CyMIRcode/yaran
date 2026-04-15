@@ -2,6 +2,9 @@
 title: 泰山游
 date: 2026-01-19
 draft: false
+url: "/p/泰山游/" 
+aliases:
+    - /post/41.html
 image: "/covers/o.webp"
 tags:
 - 泰山
